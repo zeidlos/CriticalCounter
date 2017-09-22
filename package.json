@@ -34,8 +34,14 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.1.4",
+    "cz-conventional-changelog": "^2.0.0",
     "ionic": "3.12.0",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
