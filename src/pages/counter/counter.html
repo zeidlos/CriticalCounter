@@ -7,12 +7,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>counter</ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="navigateTo('About')">
+        <ion-icon name="help"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Critical Counter</ion-title>
+    <ion-buttons end>
+      
+      <button ion-button (click)="navigateTo('Cork')">
+        Tutorial
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div class="cc-waitForSignal" *ngIf="!location">
+    <h1>Searching for <br />GPS signal ...</h1>
+  </div>
+  <div class="cc-countArea" (click)="addBike()" *ngIf="location" >
+    <div class="cc-currentCount">
+      {{ this.bikeCount }}
+    </div>
+  </div>
 </ion-content>

@@ -3,27 +3,35 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database'
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { Geolocation } from '@ionic-native/geolocation'
+import { FIREBASE_CREDENTIALS } from './firebase.credentials'
+
+import { CriticalCounterApp } from './app.component';
+import { CounterPageModule } from './../pages/counter/counter.module';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    CriticalCounterApp,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(CriticalCounterApp),
+    // Initialize AngularFireModule
+    AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
+    AngularFireDatabaseModule,
+    CounterPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    CriticalCounterApp,
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
