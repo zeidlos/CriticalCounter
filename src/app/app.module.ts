@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 
 import { Geolocation } from '@ionic-native/geolocation'
+import { Insomnia } from '@ionic-native/insomnia'
 import { FIREBASE_CREDENTIALS } from './firebase.credentials'
 
 import { CriticalCounterApp } from './app.component';
@@ -31,6 +32,7 @@ import { CounterPageModule } from './../pages/counter/counter.module';
   providers: [
     StatusBar,
     SplashScreen,
+    Insomnia,
     Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

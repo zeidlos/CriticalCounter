@@ -1,3 +1,4 @@
+import { Insomnia } from '@ionic-native/insomnia';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -6,7 +7,9 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 import { Bike } from './../../models/bike';
 
-@IonicPage()
+@IonicPage({
+  segment: 'counter'
+})
 @Component({
   selector: 'page-counter',
   templateUrl: 'counter.html',
@@ -26,6 +29,7 @@ export class CounterPage {
     public navParams: NavParams,
     private db: AngularFireDatabase,
     private geoLocation: Geolocation,
+    private insomnia: Insomnia,
   ) {
     this.bikesRef = this.db.list('bike-list');
     this.bikesRef.subscribe();
@@ -116,4 +120,11 @@ export class CounterPage {
     this.navCtrl.push(page + 'Page');
   }
 
+  ionViewDidLoad(){
+    this.insomnia.keepAwake()
+      .then(
+        () => console.log('Device got Espresso!'),
+        () => console.log('Device is still sleepy. :(')
+      )
+  }
 }
