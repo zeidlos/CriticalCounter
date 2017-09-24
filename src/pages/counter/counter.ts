@@ -67,7 +67,7 @@ export class CounterPage {
         currentLong,
         this.lastGeopoint.lat,
         this.lastGeopoint.long,
-      ) > 100
+      ) > 500
     ) {
       return true;
     } else {
