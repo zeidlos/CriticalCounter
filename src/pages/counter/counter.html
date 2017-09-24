@@ -15,8 +15,8 @@
     <ion-title>Critical Counter</ion-title>
     <ion-buttons end>
       
-      <button ion-button (click)="navigateTo('Cork')">
-        Tutorial
+      <button ion-button icon-only (click)="cancelCurrent()">
+        <ion-icon name="close"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -29,8 +29,9 @@
     <h1>Searching for <br />GPS signal ...</h1>
   </div>
   <div class="cc-countArea" (click)="addBike()" *ngIf="location" >
+    <div class="location" *ngIf="locationName">{{ locationName }}</div>
     <div class="cc-currentCount">
-      {{ this.bikeCount }}
+      {{ localCount }}
     </div>
   </div>
 </ion-content>
