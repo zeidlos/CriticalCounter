@@ -9,6 +9,9 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { Geolocation } from '@ionic-native/geolocation'
 import { Insomnia } from '@ionic-native/insomnia'
 import { FIREBASE_CREDENTIALS } from './firebase.credentials'
+import { UniqueDeviceID } from '@ionic-native/unique-device-id'
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+
 
 import { CriticalCounterApp } from './app.component';
 import { CounterPageModule } from './../pages/counter/counter.module';
@@ -33,7 +36,9 @@ import { CounterPageModule } from './../pages/counter/counter.module';
     StatusBar,
     SplashScreen,
     Insomnia,
+    UniqueDeviceID,
     Geolocation,
+    NativeGeocoder,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
