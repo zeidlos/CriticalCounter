@@ -12,10 +12,10 @@
         "ionic:serve": "ionic-app-scripts serve"
     },
     "dependencies": {
-        "@angular/common": "20.3.28",
+        "@angular/common": "20.3.29",
         "@angular/compiler": "22.2.1",
         "@angular/compiler-cli": "22.2.1",
-        "@angular/core": "20.3.28",
+        "@angular/core": "20.3.29",
         "@angular/forms": "4.1.3",
         "@angular/http": "4.1.3",
         "@angular/platform-browser": "4.1.3",
